@@ -1,0 +1,31 @@
+{
+  "name": "05-build-a-web-server",
+  "version": "1.0.0",
+  "description": "build a web server using nodejs without framework",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tianbuyung/backend.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "Septian Maulana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tianbuyung/backend/issues"
+  },
+  "homepage": "https://github.com/tianbuyung/backend#readme",
+  "dependencies": {
+    "date-fns": "^2.30.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
