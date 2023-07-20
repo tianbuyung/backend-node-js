@@ -1,18 +1,28 @@
 // core modules
 const EventEmitter = require("events");
+const http = require("http");
+const path = require("path");
+const fs = require("fs");
+const fsPromises = require("fs").promises;
 
 // custom modules
 const logEvents = require("./logEvents");
 
-class MyEmitter extends EventEmitter {}
+class Emitter extends EventEmitter {}
 
 // initialize object
-const myEmitter = new MyEmitter();
+const myEmitter = new Emitter();
 
-// add event listener for the log event
-myEmitter.on("log", (msg) => logEvents(msg));
+const PORT = process.env.PORT || 3500;
 
-setTimeout(() => {
-  // Emit event
-  myEmitter.emit("log", "Log event emitted!");
-}, 2000);
+const server = http.createServer((req, res) => {
+  console.log(req.url, req.method);
+});
+
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+// myEmitter.on("log", (msg) => logEvents(msg));
+
+// myEmitter.emit("log", "Log event emitted!");
